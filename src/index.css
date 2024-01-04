@@ -1,0 +1,19 @@
+body {
+  width: 100vw;
+  background-color: #005f73;
+  color: #e9d8a6;
+  padding: 15px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+button {
+  background-color: #778da9;
+  color: #caf0f8;
+  border: 1xp solid black;
+  padding: 10px;
+  margin: 10px;
+  border-radius: 5px;
+  cursor: pointer;
+}
