@@ -1,10 +1,10 @@
 import React from 'react'
 import ReactDOM from 'react-dom/client'
 import './index.css'
-import { MultiplesCustomHooks } from './03-examples/MultiplesCustomHooks'
+import { FocusScreen } from './04-useRef/FocusScreen'
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
-    <MultiplesCustomHooks />
+    <FocusScreen />
   </React.StrictMode>
 )
