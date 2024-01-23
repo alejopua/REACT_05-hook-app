@@ -6,11 +6,8 @@ body {
 }
 
 button {
-  background-color: #778da9;
-  color: #caf0f8;
   border: 1xp solid black;
   padding: 10px;
-  margin: 10px;
   border-radius: 5px;
   cursor: pointer;
 }
