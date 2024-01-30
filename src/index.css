@@ -11,3 +11,9 @@ button {
   border-radius: 5px;
   cursor: pointer;
 }
+
+a {
+  margin-left: 5px;
+  color: #e9d8a6;
+  font-size: 15px;
+}
