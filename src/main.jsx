@@ -2,12 +2,12 @@ import React from 'react'
 import ReactDOM from 'react-dom/client'
 import { BrowserRouter } from 'react-router-dom'
 import './index.css'
-import { MainApp } from './09-useContext/MainApp'
+import { MultiplesCustomHooks } from './03-examples'
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <BrowserRouter>
     <React.StrictMode>
-      <MainApp />
+      <MultiplesCustomHooks />
     </React.StrictMode>
   </BrowserRouter>
 )
