@@ -43,5 +43,16 @@ describe('Testing in todoReducer.js', () => {
     expect( newState ).not.toContain( initialState[0] );
     expect( newState ).toHaveLength(0);
   });  
+
+  test('Should Toggle todo', () => {
+    const action = {
+      type: '[TODO] Toggle Todo',
+      payload: 1
+    }
+
+    const newState = todoReducer( initialState, action );
+
+    expect( newState[0].done ).toBeTruthy();
+  });  
   
 });
