@@ -58,4 +58,19 @@ describe('Testing in <TodoItem />', () => {
       expect( onToggleTodoMock ).toHaveBeenCalledWith( todo.id )
   });
 
+  test('"span" should call the DeleteTodo when clicked', () => {
+
+    render(
+      <TodoItem 
+        todo={todo}
+        onDeleteTodo={onDeleteTodoMock}
+        onToggleTodo={onToggleTodoMock}
+      />
+      )
+
+      const deleteButton = screen.getByLabelText('button-delete')
+      fireEvent.click( deleteButton )
+      expect( onDeleteTodoMock ).toHaveBeenCalledWith( todo.id )
+  });
+
 });
