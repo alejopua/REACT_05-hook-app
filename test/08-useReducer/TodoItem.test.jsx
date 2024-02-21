@@ -27,4 +27,19 @@ describe('Testing in <TodoItem />', () => {
     expect( spanElement.className ).toBe('align-self-center ')
 
   });
+
+  test('should show the pending todo', () => {
+    todo.done = true
+
+    render(
+      <TodoItem 
+        todo={todo}
+        onDeleteTodo={onDeleteTodoMock}
+        onToggleTodo={onToggleTodoMock}
+      />
+      )
+
+      const spanElement = screen.getByLabelText('span')
+      expect( spanElement.className ).toContain('text-decoration-line-through')
+  });
 });
