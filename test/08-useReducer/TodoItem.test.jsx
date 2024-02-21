@@ -1,4 +1,4 @@
-import { render, screen } from "@testing-library/react";
+import { fireEvent, render, screen } from "@testing-library/react";
 import { TodoItem } from "../../src/08-useReducer/TodoItem";
 
 describe('Testing in <TodoItem />', () => {
@@ -42,4 +42,20 @@ describe('Testing in <TodoItem />', () => {
       const spanElement = screen.getByLabelText('span')
       expect( spanElement.className ).toContain('text-decoration-line-through')
   });
+
+  test('"span" should call the toggleTodo when clicked', () => {
+
+    render(
+      <TodoItem 
+        todo={todo}
+        onDeleteTodo={onDeleteTodoMock}
+        onToggleTodo={onToggleTodoMock}
+      />
+      )
+
+      const spanElement = screen.getByLabelText('span')
+      fireEvent.click( spanElement )
+      expect( onToggleTodoMock ).toHaveBeenCalledWith( todo.id )
+  });
+
 });
