@@ -12,9 +12,6 @@ describe('Testing in todoReducer.js', () => {
     const newState = todoReducer( initialState, {} );
 
     expect( newState ).toBe( initialState );
-
-
-    
   });
   
 });
