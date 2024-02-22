@@ -16,7 +16,7 @@ export const LoginPage = () => {
 
       <button
         className="btn btn-primary"
-        onClick={() => setUser({ id: 123, name: 'Pepito', email: 'venitocamelas@mail.cot)'})}
+        onClick={() => setUser({ id: 123, name: 'Pepito', email: 'venitocamelas@mail.cot'})}
         aria-label="btnSetUser"
       >
         Establecer Usuario
