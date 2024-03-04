@@ -1,7 +1,7 @@
 // import { useCounter } from "../hooks/useCounter";
 import { useCounter } from "../hooks/useCounter";
 import { useFetch } from "../hooks/useFetch"
-import { LoadingQuote, Quote } from "./";
+import { LoadingMsg, Quote } from "./";
 
 export const MultiplesCustomHooks = () => {
   const { increment } = useCounter(1);
@@ -15,7 +15,7 @@ export const MultiplesCustomHooks = () => {
       
       {
         (isLoading)
-          ? <LoadingQuote />
+          ? <LoadingMsg />
           : <Quote author={author} quote={quote}/>
       }    
 
