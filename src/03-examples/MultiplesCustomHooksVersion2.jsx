@@ -28,7 +28,6 @@ export const MultiplesCustomHooksVersion2 = () => {
           : hasError 
             ? <h5>Data no obtenida, revise la api o url.</h5> 
             : ( 
-                console.log(data),
                 <PokemonCard 
                   { ...data } 
                   sprites={[
