@@ -15,13 +15,31 @@ export const useFetch = ( url ) => {
     })
 
     const res = await fetch(url);
+
+    if (!res.ok) {
+      setState({
+        data: null,
+        isLoading: false,
+        hasError: true,
+        error: {
+          code: res.status,
+          message: res.statusText,
+        }
+      })
+
+      return;
+    }
+
     const data = await res.json();
 
     setState({
       data,
       isLoading: false,
-      hasError: null,
+      hasError: false,
+      error: null
     })
+
+    // manejo caché
   }
 
   useEffect(() => {
