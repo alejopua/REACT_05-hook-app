@@ -1,6 +1,6 @@
 // import { useCounter } from "../hooks/useCounter";
 import { useFetch } from "../hooks/useFetch"
-import { LoadingQuote, Quote } from "../03-examples/index";
+import { LoadingMsg, Quote } from "../03-examples/index";
 
 export const Layout = () => {
   const { data, isLoading, getFetch } = useFetch(`https://api.breakingbadquotes.xyz/v1/quotes`);
@@ -13,7 +13,7 @@ export const Layout = () => {
       
       {
         (isLoading)
-          ? <LoadingQuote />
+          ? <LoadingMsg />
           : <Quote author={author} quote={quote}/>
       }    
 
