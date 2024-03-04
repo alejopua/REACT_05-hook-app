@@ -1,10 +1,12 @@
 import { useEffect, useState } from "react"
 
+const localCache = {};
+
 export const useFetch = ( url ) => {
   const [state, setState] = useState({
     data: null,
     isLoading: true,
-    hasError: null,
+    hasError: false,
     error: null,
   })
 
@@ -12,14 +14,28 @@ export const useFetch = ( url ) => {
     getFetch();
   }, [url])
 
-  const getFetch = async() => {
+  const setLoadingState = () => {
     setState({
       ...state,
       isLoading: true,
     })
+  }
+
+  const getFetch = async() => {
+
+    if ( localCache[url] ) {
+      setState({
+        data: localCache[url],
+        isLoading: false,
+        hasError: false,
+        error: null
+      })
+      return;
+    }
+
+    setLoadingState();
 
     const res = await fetch(url);
-
     await new Promise( resolve => setTimeout(resolve, 1000))
 
     if (!res.ok) {
@@ -32,7 +48,6 @@ export const useFetch = ( url ) => {
           message: res.statusText,
         }
       })
-
       return;
     }
 
@@ -46,12 +61,12 @@ export const useFetch = ( url ) => {
     })
 
     // manejo caché
+    localCache[url] = data;
   }
 
   return {
     data: state.data,
     isLoading: state.isLoading,
-    hasError: state.hasError,
-    getFetch
+    hasError: state.hasError
   };
 }
