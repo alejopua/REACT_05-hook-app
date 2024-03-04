@@ -1,3 +1,3 @@
-export * from './LoadingQuote';
+export * from './LoadingMsg';
 export * from './Quote';
 export * from './MultiplesCustomHooks';
