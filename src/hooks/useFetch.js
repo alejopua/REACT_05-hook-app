@@ -33,6 +33,7 @@ export const useFetch = ( url ) => {
       return;
     }
 
+
     setLoadingState();
 
     const res = await fetch(url);
