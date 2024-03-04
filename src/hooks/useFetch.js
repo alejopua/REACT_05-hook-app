@@ -5,6 +5,7 @@ export const useFetch = ( url ) => {
     data: null,
     isLoading: true,
     hasError: null,
+    error: null,
   })
 
   const getFetch = async() => {
