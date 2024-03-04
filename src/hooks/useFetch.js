@@ -8,6 +8,10 @@ export const useFetch = ( url ) => {
     error: null,
   })
 
+  useEffect(() => {
+    getFetch();
+  }, [url])
+
   const getFetch = async() => {
     setState({
       ...state,
@@ -43,11 +47,6 @@ export const useFetch = ( url ) => {
 
     // manejo caché
   }
-
-  useEffect(() => {
-    getFetch();
-  }, [url])
-  
 
   return {
     data: state.data,
